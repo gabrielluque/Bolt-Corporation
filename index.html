@@ -1,144 +1,205 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSS - Criamos Seu Site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bolt Corporation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cor-primaria: #0d0d0d;
+      --cor-secundaria: #1a1a1a;
+      --cor-texto: #f5f5f5;
+      --cor-destaque: #4ecdc4;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--cor-primaria);
+      color: var(--cor-texto);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--cor-secundaria);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--cor-destaque);
+    }
+
+    nav a {
+      color: var(--cor-texto);
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    section {
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: var(--cor-primaria);
+    }
+
+    .hero h1 {
+      font-size: 6vw;
+      color: var(--cor-destaque);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 600px;
+    }
+
+    .servicos {
+      background-color: var(--cor-secundaria);
+    }
+
+    .servicos h2 {
+      font-size: 28px;
+      color: var(--cor-destaque);
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #222;
+      border-radius: 8px;
+      padding: 30px;
+      width: 280px;
+      color: var(--cor-texto);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      color: var(--cor-destaque);
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .depoimentos h2 {
+      font-size: 28px;
+      color: var(--cor-destaque);
+      margin-bottom: 30px;
+    }
+
+    .depoimento {
+      background-color: #222;
+      padding: 20px;
+      margin: 10px auto;
+      border-radius: 8px;
+      max-width: 600px;
+      color: var(--cor-texto);
+    }
+
+    .cta {
+      background-color: var(--cor-destaque);
+      color: #000;
+    }
+
+    .cta a {
+      display: inline-block;
+      background-color: #000;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="logo">Bolt Corporation</div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#depoimentos">Depoimentos</a>
+    </nav>
+  </header>
 
-<section class="etapas">
-  <div class="card-etapa">
-    <h3>1. Diagnóstico</h3>
-    <p>Entendemos suas necessidades, público e objetivos.</p>
-  </div>
-  <div class="card-etapa">
-    <h3>2. Planejamento</h3>
-    <p>Desenhamos a estrutura do site com foco estratégico.</p>
-  </div>
-  <div class="card-etapa">
-    <h3>3. Criação</h3>
-    <p>Aplicamos design profissional e conteúdo alinhado à marca.</p>
-  </div>
-  <div class="card-etapa">
-    <h3>4. Acompanhamento</h3>
-    <p>Monitoramos o desempenho e damos suporte contínuo.</p>
-  </div>
-</section>
+  <section id="inicio" class="hero">
+    <h1>Presença digital de verdade</h1>
+    <p>Criamos sites profissionais para apresentar o seu negócio ao mundo com estratégia, estilo e propósito.</p>
+  </section>
 
-<section class="oque-fazemos">
-  <div class="oque-texto">
-    <h2>O que fazemos</h2>
-    <p>
-      Construa seu projeto com desenvolvedores altamente capacitados em tecnologia, performance, estrutura e segurança.
-    </p>
-    <p>
-      A equipe da CSS proporciona o desenvolvimento por especialistas em tecnologia, garantindo total segurança e qualidade.
-    </p>
-  </div>
-  <div class="oque-servicos">
-    <div class="oque-card destaque">
-      <h3>Desenvolvimento de Software</h3>
-      <p>Especialização no desenvolvimento de soluções customizadas para todas as áreas do mercado.</p>
-      <strong>Saiba mais</strong>
+  <section id="servicos" class="servicos">
+    <h2>Nossos serviços</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Criação de Sites</h3>
+        <p>Sites modernos, responsivos e pensados para destacar sua marca e gerar resultados reais.</p>
+      </div>
+      <div class="card">
+        <h3>Consultoria Digital</h3>
+        <p>Análise e direcionamento estratégico para fortalecer sua presença e performance online.</p>
+      </div>
     </div>
-    <div class="oque-card">Desenvolvimento de Sites Institucionais</div>
-    <div class="oque-card">Desenvolvimento de Aplicativos Mobile</div>
-    <div class="oque-card">Serviço de Consultoria</div>
-  </div>
-</section>
+  </section>
 
-<section class="depoimentos">
-  <h2>O que nossos clientes dizem</h2>
-  <div class="depoimento">
-    "A equipe da CSS superou todas as expectativas. O site ficou profissional e moderno!"
-    <strong>— Ana Souza</strong>
-  </div>
-  <div class="depoimento">
-    "Muito além de um site, recebi orientação estratégica que realmente ajudou meu negócio."
-    <strong>— Marcos Lima</strong>
-  </div>
-  <div class="depoimento">
-    "Fiquei impressionado com o atendimento e o resultado final. Recomendo a todos!"
-    <strong>— Carla Mendes</strong>
-  </div>
-</section>
+  <section id="depoimentos" class="depoimentos">
+    <h2>O que nossos clientes dizem</h2>
+    <div class="depoimento">
+      “Equipe atenciosa, entrega profissional e visual incrível. Fiquei muito satisfeita!”<br><strong>— Ana Souza</strong>
+    </div>
+    <div class="depoimento">
+      “Mesmo sem portfólio me passaram confiança. E cumpriram tudo no prazo!”<br><strong>— Marcos Lima</strong>
+    </div>
+  </section>
 
-<style>
-  body {
-    background-color: #0f0f0f;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+  <section class="cta">
+    <h2>Vamos conversar sobre seu projeto?</h2>
+    <p>A primeira conversa é sem compromisso. Podemos entender sua ideia e já sugerir o melhor caminho para colocar sua marca no digital com presença e profissionalismo.</p>
+    <a href="https://wa.me/SEUNUMEROAQUI" target="_blank">Fale com a gente no WhatsApp</a>
+  </section>
 
-  .oque-fazemos {
-    background-color: #0f0f0f;
-    padding: 60px 40px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-
-  .oque-texto {
-    flex: 1;
-    min-width: 300px;
-  }
-
-  .oque-texto h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-
-  .oque-texto p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #ccc;
-  }
-
-  .oque-servicos {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .oque-card {
-    background-color: #1a1a1a;
-    border-left: 5px solid #3adb6f;
-    padding: 20px;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 16px;
-    color: #fff;
-  }
-
-  .oque-card.destaque {
-    background-color: #1e1e1e;
-  }
-
-  .oque-card.destaque h3 {
-    color: #3adb6f;
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  .oque-card.destaque p {
-    color: #ccc;
-    font-size: 14px;
-    margin-bottom: 5px;
-    font-weight: normal;
-  }
-
-  .oque-card.destaque strong {
-    color: #3adb6f;
-    font-size: 14px;
-    font-weight: bold;
-  }
-</style>
+  <footer>
+    © 2025 Bolt Corporation — Desenvolvemos sites, transformamos presenças digitais.
+  </footer>
 </body>
 </html>
